@@ -1,0 +1,2 @@
+class InsideplacesController < ApplicationController
+end
