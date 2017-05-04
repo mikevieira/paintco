@@ -19,9 +19,12 @@
                     <img class="img-responsive" src="http://placehold.it/700x400" alt="">
                 </a>
                 <h3>
-                    <a href="#">Project One</a>
+                    <% @places.each do |place| %>
+            
+                    <a href="#"><%=place.title%></a>
                 </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+                <p><%=place.description%></p>
+                <% end %>
             </div>
             <div class="col-md-6 portfolio-item">
                 <a href="#">
