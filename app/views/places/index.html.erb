@@ -14,18 +14,20 @@
 
         <!-- Projects Row -->
         <div class="row">
+          <% @places.each do |place| %>
             <div class="col-md-6 portfolio-item">
                 <a href="#">
                     <img class="img-responsive" src="http://placehold.it/700x400" alt="">
                 </a>
                 <h3>
-                    <% @places.each do |place| %>
-            
-                    <a href="#"><%=place.title%></a>
+                  <%= link_to place.title, place_path(place) %>
+                   <!--  <a href="#"><%=place.title%></a> -->
+                 
                 </h3>
                 <p><%=place.description%></p>
-                <% end %>
+               
             </div>
+
             <div class="col-md-6 portfolio-item">
                 <a href="#">
                     <img class="img-responsive" src="http://placehold.it/700x400" alt="">
@@ -34,7 +36,8 @@
                     <a href="#">Project Two</a>
                 </h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-            </div>
+            </div> 
+            <% end %>
         </div>
         <!-- /.row -->
 

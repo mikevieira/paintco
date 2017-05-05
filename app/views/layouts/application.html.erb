@@ -62,6 +62,11 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
+                    <% if user_signed_in? %>
+                     <li id="gold">
+                         <i class="fa fa-plus-circle"><%=link_to "Add a New Place", new_place_path%></i>
+                      </li>
+                     <% end %>
                     <li>
                         <%=link_to "Home", root_path%>
                     </li>
@@ -121,6 +126,11 @@
                         </li>
                     </ul>
                     <p class="copyright text-muted small text-center">Copyright &copy; LPL Painters 2017. All Rights Reserved</p>
+                    <% if user_signed_in? %>
+                       <p class="copyright text-muted small text-center"><%=link_to "Sign Out", destroy_user_session_path, method: :delete %></p>
+                    <% else %>   
+                    <p class="copyright text-muted small text-center"><%=link_to "Sign In", new_user_session_path%></p>
+                    <% end %>
                 </div>
             </div>
         </div>

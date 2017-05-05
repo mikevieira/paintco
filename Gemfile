@@ -63,3 +63,5 @@ gem "font-awesome-rails"
 gem 'ionicons-rails', '~> 2.0'
 
 gem 'devise'
+
+gem 'simple_form'

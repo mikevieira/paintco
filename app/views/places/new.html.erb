@@ -1,0 +1,13 @@
+<br class= "clearfix"/>
+<div class="row">            
+  <div class="booyah-box col-lg-8 col-lg-offset-2">
+  <h1>Enter Place Details</h1>
+  <%=simple_form_for @place do |f| %>
+    <%= f.input :title %>
+    <%= f.input :date %>
+    <%= f.input :description %>
+    <br/>
+    <%= f.submit 'Create', class: 'btn btn-primary' %>
+  <% end %>
+</div>
+</div>
