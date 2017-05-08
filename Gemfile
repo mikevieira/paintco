@@ -65,3 +65,5 @@ gem 'ionicons-rails', '~> 2.0'
 gem 'devise'
 
 gem 'simple_form'
+
+gem 'carrierwave', '~> 1.0'
