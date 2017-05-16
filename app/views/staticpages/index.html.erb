@@ -1,41 +1,14 @@
  
-<script type="text/javascript">
-    
-var firstAnimation = function () {
-    $('.outside').each(
-        function () {
-            $(this).delay(500).animate({
-                opacity: 1,
-                height: '180',
-                width: '250'
-            }, 2000);
-        }
-    );
-};
 
-if ($(window).width() <= 549) {
-    if($(window).scrollTop() > 600) {
-        // the animation that's executed
-        firstAnimation();
-    }
-} else if ($(window).width() > 549 && $(window).width() <= 991) {
-    if($(window).scrollTop() > 480){
-        // the animation that's executed
-        firstAnimation();
-    }
-} else {
-    if ($(window).scrollTop() > 450) {
-        // the animation that should be executed
-        firstAnimation();
-    }
-}
-
-
-</script>
+   
 
 
 
- <!-- Header -->
+
+<title>LPL PAINTERS INC : THUNDER BAY PAINTING CONTRACTOR</title>
+ <meta name="description" content="Design to match your personal style, experience and expertise to match your expectations, customer service that sets us apart.  LPL PAINTERS is your premier choice for a full service painting contractor in Thunder Bay">
+
+ <!-- header -->
     <a name="about"></a>
     <div class="intro-header">
         <div class="container">
@@ -64,10 +37,46 @@ if ($(window).width() <= 549) {
             </div>
 
         </div>
-        <!-- /.container -->
-
-    </div>
+        <!--/.container-->
+    </div> 
     <!-- /.intro-header -->
+
+<!-- slider  -->
+<!--    <div class="intro-header">
+    <div class="container">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active">
+             <%=image_tag 'SliderLogo.png', class: 'd-block img-fluid' %>
+            </div>
+            <div class="carousel-item">
+              <%=image_tag 'MainPagePhoto1.jpg', class: 'd-block img-fluid' %>
+            </div>
+            <div class="carousel-item d-block">
+              <%=image_tag 'Mainpagephoto2.jpg', class: 'd-block img-fluid' %>
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+    </div>
+</div>
+ -->
+<!-- /slider -->
+
+  
+
 
     <!-- Page Content -->
 
@@ -83,9 +92,11 @@ if ($(window).width() <= 549) {
                     <p class="lead"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.    
                     </p>
                 </div>
+                <%= link_to places_path do %>
                 <div class="col-lg-5 col-lg-offset-2 col-sm-6 outside">
                     <%= image_tag("outside.jpg", :alt => "outside",:class => "img-responsive well") %>
                 </div>
+                <% end %>
             </div>
 
         </div>
@@ -105,9 +116,11 @@ if ($(window).width() <= 549) {
                     <h2 class="section-heading">Interior Painting <br>Match your personal style</h2>
                     <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. </p>
                 </div>
+                <%= link_to insideplaces_path do %>
                 <div class="col-lg-5 col-sm-pull-6  col-sm-6">
                     <%= image_tag("paint.jpg", :alt => "inside",:class => "img-responsive well") %>
                 </div>
+                <% end %>
             </div>
 
         </div>
@@ -124,11 +137,13 @@ if ($(window).width() <= 549) {
                 <div class="col-lg-5 col-sm-6">
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
-                    <h2 class="section-heading">Personalize to your style<br>etc etc</h2>
+                    <h2 class="section-heading">Request a free written estimate<br></h2>
                     <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
                 </div>
+                <%= link_to staticpages_contact_path do %>
                 <div class="col-lg-5 col-lg-offset-2 col-sm-6">
                     <%= image_tag("paintbrush.jpg", :alt => "paintbrush",:class => "img-responsive well") %>
+                   <% end %> 
                 </div>
             </div>
 
@@ -170,8 +185,3 @@ if ($(window).width() <= 549) {
 
    
 
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>

@@ -21,13 +21,13 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Landing Page - Start Bootstrap Theme</title>
+    <!-- <title>Landing Page - Start Bootstrap Theme</title> -->
 
     <!-- Bootstrap Core CSS -->
   
 
     <!-- Custom CSS -->
-    
+    <link href="//cdn.rawgit.com/noelboss/featherlight/1.7.5/release/featherlight.min.css" type="text/css" rel="stylesheet" />
 
     <!-- Custom Fonts -->
     
@@ -39,6 +39,7 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 
 </head>
 
@@ -55,9 +56,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">
-                    <%= image_tag("logotext.png", :alt => "LPLPainters") %> 
-                </a>
+                <!-- <a class="navbar-brand" href="#"> -->
+                     <div class="navbar-brand">
+                   <%= image_tag("LogoColorTextRight_3.png", :alt => "LPLPainters") %> 
+                    </div>
+                <!-- </a> -->
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -67,6 +70,7 @@
                          <i class="fa fa-plus-circle"><%=link_to "Add a New Place", new_place_path%></i>
                       </li>
                      <% end %>
+
                     <li>
                         <%=link_to "Home", root_path%>
                     </li>
@@ -90,12 +94,14 @@
         </div>
         <!-- /.container -->
     </nav>
+    <div>
        <% if notice.present? %>
        <p class="notice"><%= notice %></p>
        <% end %>
        <% if alert.present? %>
        <p class="alert"><%= alert %></p>
        <% end %>
+    </div>
 
       <%= yield %>
 
@@ -135,6 +141,8 @@
             </div>
         </div>
     </footer>
+   
+<script src="//cdn.rawgit.com/noelboss/featherlight/1.7.5/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
 </body>
 
 </html>

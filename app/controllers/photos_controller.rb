@@ -7,10 +7,12 @@ before_action :authenticate_user!
     redirect_to place_path(@place)
   end 
 
+
+
 private
 
 def photo_params    
- params.require(:photo).permit(:image)   
+ params.require(:photo).permit(:image, :remove_image)   
 end
 
 end

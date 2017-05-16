@@ -10,14 +10,14 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  * 
-  
+
 
  */
 
 @import "bootstrap"; 
 @import "font-awesome";
 @import "ionicons";
-@import "bootstrap.min";
+
 
 
 /*
@@ -64,10 +64,8 @@ body {
 }
 
 .navbar-brand {
-  margin-top: -5px;
 }
-
-
+ 
 
 
 .lead {
@@ -79,7 +77,6 @@ body {
     padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
     padding-bottom: 50px;
     text-align: center;
-    color: #f8f8f8;
     background: image-url('paintinterior.jpg') no-repeat center center;
     background-size: cover;
 }
@@ -88,12 +85,14 @@ body {
     position: relative;
     padding-top: 20%;
     padding-bottom: 20%;
+    color: #FFF;
 }
 
 .intro-message > h1 {
     margin: 0;
     text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
     font-size: 5em;
+
 }
 
 .intro-divider {
@@ -161,7 +160,7 @@ body {
 .banner {
     padding: 100px 0;
     color: #f8f8f8;
-    background: url(../img/banner-bg.jpg) no-repeat center center;
+   
     background-size: cover;
 }
 
@@ -236,6 +235,11 @@ p.copyright {
 }
 
 #gold {
-   color: #ffd700;
-    
+   color: #ffd700;  
 }
+
+.hidden {
+    display: none;
+}
+
+

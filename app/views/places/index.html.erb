@@ -1,93 +1,151 @@
 
+ <title>EXTERIOR PHOTO GALLERY : LPL PAINTERS INC.</title>
+<meta name="description" content="Creating exteriors with esthetic appeal, this gallery contains a sample of completed exterior projects by LPL PAINTERS INC. Thunder Bay">
+
+
+<script type="text/javascript">
+  
+$.featherlight($('#lightbox1'), {})
+
+
+</script>
+
+
+
     <!-- Page Content -->
     <div class="container">
 
         <!-- Page Header -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Exterior Projects
-                    <small>Secondary Text</small>
+                <h1 class="page-header">Outside
+                    <small>Gallery: Selected Exterior Work</small>
                 </h1>
             </div>
         </div>
         <!-- /.row -->
 
-        <!-- Projects Row -->
+
+
+
+
+
+        <!-- Portfolio Item Row -->
+         
+        <% @places.each do |place| %>
+       <% if place.photos.present? %>
         <div class="row">
-          <% @places.each do |place| %>
-            <div class="col-md-6 portfolio-item">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-                </a>
-                <h3>
-                  <%= link_to place.title, place_path(place) %>
-                   <!--  <a href="#"><%=place.title%></a> -->
-                 
-                </h3>
-                <p><%=place.description%></p>
+     
+       <div class="col-md-8">
+       
+      
+       <%= image_tag place.photos.last.image, class: 'img-responsive'%></div> 
+       
+         
+            </div>
+
+            <div class="col-md-4">
+                <h3><%= link_to place.title, place_path(place) %></h3>
+                <p><%=place.description%>.</p>
                
+                
             </div>
 
-            <div class="col-md-6 portfolio-item">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-                </a>
-                <h3>
-                    <a href="#">Project Two</a>
-                </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-            </div> 
-            <% end %>
         </div>
         <!-- /.row -->
 
-        <!-- Projects Row -->
+        <!-- Related Projects Row -->
         <div class="row">
-            <div class="col-md-6 portfolio-item">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-                </a>
-                <h3>
-                    <a href="#">Project Three</a>
-                </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-            </div>
-            <div class="col-md-6 portfolio-item">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-                </a>
-                <h3>
-                    <a href="#">Project Four</a>
-                </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-            </div>
-        </div>
-        <!-- /.row -->
 
-        <!-- Projects Row -->
-        <div class="row">
-            <div class="col-md-6 portfolio-item">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-                </a>
-                <h3>
-                    <a href="#">Project Five</a>
-                </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+            <div class="col-lg-12">
+                <h3 class="page-header">More Photos</h3>
             </div>
-            <div class="col-md-6 portfolio-item">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-                </a>
-                <h3>
-                    <a href="#">Project Six</a>
-                </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+
+
+
+
+
+
+
+
+            <% n = 0%>
+            <%place.photos.each do |pic|  %>
+            <% n = n+1%>
+            <a  href="#" data-featherlight="#lightbox<%=n%>">
+            <div class="col-sm-3 col-xs-6" id="lightbox<%=n%>">
+               
+                  <%= image_tag pic.image, class: "img-responsive well" %>
+
+                   <!--  <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt=""> -->
             </div>
-        </div>
+            </a>
+            <% end %>  
+           
+            
         <!-- /.row -->
 
         <hr>
+       
+
+        <% else %>
+      <div class="row">
+
+            <div class="col-md-8">
+                <img class="img-responsive" src="http://placehold.it/750x500" alt="">
+            </div>
+
+            <div class="col-md-4">
+                < <h3><%= link_to place.title, place_path(place) %></h3>
+                <p><%=place.description%></p>
+                <h3>Project Details</h3>
+                <ul>
+                    <li>Lorem Ipsum</li>
+                    <li>Dolor Sit Amet</li>
+                    <li>Consectetur</li>
+                    <li>Adipiscing Elit</li>
+                </ul>
+            </div>
+
+        </div>
+        <!-- /.row -->
+
+        <!-- Related Projects Row -->
+        <div class="row">
+
+            <div class="col-lg-12">
+                <h3 class="page-header">Related Projects</h3>
+            </div>
+
+            <div class="col-sm-3 col-xs-6">
+                <a href="#">
+                    <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
+                </a>
+            </div>
+
+            <div class="col-sm-3 col-xs-6">
+                <a href="#">
+                    <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
+                </a>
+            </div>
+
+            <div class="col-sm-3 col-xs-6">
+                <a href="#">
+                    <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
+                </a>
+            </div>
+
+            <div class="col-sm-3 col-xs-6">
+                <a href="#">
+                    <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
+                </a>
+            </div>
+
+        </div>
+
+        <% end %>
+        <% end %>
+
+
 
         <!-- Pagination -->
         <div class="row text-center">
