@@ -20,7 +20,7 @@ $('#lightbox1').featherlight($('#lightbox1'), {});
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">Outside Gallery:
-                    <small> Selected Exterior Work<% if user_signed_in? %>
+                     Selected Exterior Work <small><% if user_signed_in? %>
                      <div id="gold" class="text-right">
                          <i class="fa fa-plus-circle"><%=link_to "Add a New Place", new_place_path%></i>
                       </div></small>
@@ -72,7 +72,7 @@ $('#lightbox1').featherlight($('#lightbox1'), {});
             
             <%place.photos.each do |pic|  %>
             <% n = n+1%>
-            <div class="col-sm-3 col-xs-6 " >
+            <div class="col-sm-3 col-xs-6">
                 <a href="#" data-featherlight="#lightbox<%=n%>">
                   <div id="lightbox<%=n%>">
                    <%= image_tag pic.image, class: "img-responsive portfolio-item well threed" %>
@@ -81,7 +81,7 @@ $('#lightbox1').featherlight($('#lightbox1'), {});
             </div>
             <% end %> 
 
-          </div> 
+        </div> 
 
             <br/>
             <hr class= 'bold'/>

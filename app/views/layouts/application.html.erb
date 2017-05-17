@@ -41,7 +41,7 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <!--  <script src="//code.jquery.com/jquery-1.11.0.min.js"></script> -->
 
 </head>
 
@@ -59,10 +59,13 @@
                     <span class="icon-bar"></span>
                 </button>
                 <!-- <a class="navbar-brand" href="#"> -->
-                     <div class="navbar-brand">
-                   <%= image_tag("LogoColorTextRight_3.png", :alt => "LPLPainters") %> 
-                    </div>
-                <!-- </a> -->
+                    <div class="col-lg-1">
+                    <%= link_to root_path do %>
+                    <%= image_tag("logotext.png", :alt => "LPLPainters") %> 
+                    <% end %>
+                </div> 
+
+                   
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -84,8 +87,8 @@
                     </li>
                     <li>
                         <%=link_to 'Contact', new_contact_path%>
-                    </li>
-                    <li class="social-facebook"><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                    <!-- </li>
+                    <li class="social-facebook"><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li> -->
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

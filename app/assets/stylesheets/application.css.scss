@@ -67,8 +67,14 @@ body {
 }
 
 .navbar-brand {
+  padding: 0px;
+
 }
- 
+.navbar-brand>img {
+  height: 100%;
+  padding: 0px;
+  width: auto;
+}
 
 
 .lead {
@@ -249,9 +255,9 @@ p.copyright {
 
 .grow:hover
 {
-        -webkit-transform: scale(1.3);
-        -ms-transform: scale(1.3);
-        transform: scale(1.3);
+        -webkit-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        transform: scale(1.2);
 }
 
 .threed:hover{
@@ -274,6 +280,18 @@ p.copyright {
 .smallpic {
     margin-left: 10px;
     margin-right: 10px;
+}
+
+.choosefile {
+  margin-top: 10px;
+}
+
+.connect{
+ color: #333333
+}
+
+.fa-globe {
+    margin-right: 4px;
 }
  
 
