@@ -76,4 +76,6 @@ gem "mini_magick"
 
 gem 'mail_form'
 
+gem 'featherlight'
+
 

@@ -4,9 +4,10 @@
 
 
 <script type="text/javascript">
-  
-$.featherlight($('#lightbox1'), {})
 
+
+$('#lightbox1').featherlight($('#lightbox1'), {});
+  
 
 </script>
 
@@ -18,8 +19,8 @@ $.featherlight($('#lightbox1'), {})
         <!-- Page Header -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Outside
-                    <small>Gallery: Selected Exterior Work</small>
+                <h1 class="page-header">Outside Gallery:
+                    <small> Selected Exterior Work</small>
                 </h1>
             </div>
         </div>
@@ -31,60 +32,53 @@ $.featherlight($('#lightbox1'), {})
 
 
         <!-- Portfolio Item Row -->
-         
+         <% if @places.present?  %>
+         <% n = 0%>
         <% @places.each do |place| %>
+       <% if place.outside == true %>
        <% if place.photos.present? %>
         <div class="row">
      
        <div class="col-md-8">
-       
-      
-       <%= image_tag place.photos.last.image, class: 'img-responsive'%></div> 
-       
-         
-            </div>
+       <%= image_tag place.photos.last.image, class: 'img-responsive well'%></div> 
 
             <div class="col-md-4">
                 <h3><%= link_to place.title, place_path(place) %></h3>
                 <p><%=place.description%>.</p>
                
-                
             </div>
 
         </div>
         <!-- /.row -->
 
-        <!-- Related Projects Row -->
+        <!-- Related Photos Row -->
         <div class="row">
 
             <div class="col-lg-12">
-                <h3 class="page-header">More Photos</h3>
+                <h3 class="page-header">More Photos <small>Click to enlarge</small></h3>
             </div>
 
-
-
-
-
-
-
-
-            <% n = 0%>
+            
             <%place.photos.each do |pic|  %>
             <% n = n+1%>
-            <a  href="#" data-featherlight="#lightbox<%=n%>">
-            <div class="col-sm-3 col-xs-6" id="lightbox<%=n%>">
+            <div class="col-sm-3 col-xs-6" >
+           <a  href="#" data-featherlight="#lightbox<%=n%>">
+             <div id="lightbox<%=n%>">
                
                   <%= image_tag pic.image, class: "img-responsive well" %>
-
-                   <!--  <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt=""> -->
             </div>
             </a>
-            <% end %>  
-           
+            </div>
+            <% end %> 
+
             
+          </div>  
+           
+            <br/>
+            <hr class= 'bold'/>
         <!-- /.row -->
 
-        <hr>
+       
        
 
         <% else %>
@@ -95,7 +89,7 @@ $.featherlight($('#lightbox1'), {})
             </div>
 
             <div class="col-md-4">
-                < <h3><%= link_to place.title, place_path(place) %></h3>
+                <h3><%= link_to place.title, place_path(place) %></h3>
                 <p><%=place.description%></p>
                 <h3>Project Details</h3>
                 <ul>
@@ -144,6 +138,62 @@ $.featherlight($('#lightbox1'), {})
 
         <% end %>
         <% end %>
+        <% end %>
+        <% else %>
+         <div class="row">
+
+            <div class="col-md-8">
+                <img class="img-responsive" src="http://placehold.it/750x500" alt="">
+            </div>
+
+            <div class="col-md-4">
+                <h3>Coming Soon</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim.</p>
+                <h3>Project Details</h3>
+                <ul>
+                    <li>Lorem Ipsum</li>
+                    <li>Dolor Sit Amet</li>
+                    <li>Consectetur</li>
+                    <li>Adipiscing Elit</li>
+                </ul>
+            </div>
+
+        </div>
+        <!-- /.row -->
+
+        <!-- Related Projects Row -->
+        <div class="row">
+
+            <div class="col-lg-12">
+                <h3 class="page-header">Related Projects</h3>
+            </div>
+
+            <div class="col-sm-3 col-xs-6">
+                <a href="#">
+                    <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
+                </a>
+            </div>
+
+            <div class="col-sm-3 col-xs-6">
+                <a href="#">
+                    <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
+                </a>
+            </div>
+
+            <div class="col-sm-3 col-xs-6">
+                <a href="#">
+                    <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
+                </a>
+            </div>
+
+            <div class="col-sm-3 col-xs-6">
+                <a href="#">
+                    <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
+                </a>
+            </div>
+
+        </div>
+        <% end %>
 
 
 
@@ -179,3 +229,5 @@ $.featherlight($('#lightbox1'), {})
 
         <hr>
         </div>
+
+    

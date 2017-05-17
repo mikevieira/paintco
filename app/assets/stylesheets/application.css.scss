@@ -10,13 +10,16 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  * 
-
+ *= require featherlight
+ *= require featherlight-gallery
 
  */
 
 @import "bootstrap"; 
 @import "font-awesome";
 @import "ionicons";
+
+
 
 
 
@@ -240,6 +243,11 @@ p.copyright {
 
 .hidden {
     display: none;
+}
+
+.bold {
+    height: px !important;
+  
 }
 
 

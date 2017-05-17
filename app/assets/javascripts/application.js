@@ -12,6 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require featherlight
+//= require featherlight-gallery
 //= require turbolinks
 //= require tether
 //= require bootstrap-sprockets 
