@@ -20,8 +20,14 @@ $('#lightbox1').featherlight($('#lightbox1'), {});
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">Outside Gallery:
-                    <small> Selected Exterior Work</small>
-                </h1>
+                    <small> Selected Exterior Work<% if user_signed_in? %>
+                     <div id="gold" class="text-right">
+                         <i class="fa fa-plus-circle"><%=link_to "Add a New Place", new_place_path%></i>
+                      </div></small>
+                      </h1>
+                     
+                     <% end %>
+                
             </div>
         </div>
         <!-- /.row -->
@@ -43,11 +49,16 @@ $('#lightbox1').featherlight($('#lightbox1'), {});
        <%= image_tag place.photos.last.image, class: 'img-responsive well'%></div> 
 
             <div class="col-md-4">
-                <h3><%= link_to place.title, place_path(place) %></h3>
-                <p><%=place.description%>.</p>
-               
-            </div>
+               <% if current_user && current_user == place.user %>
+                <h3><u><%= link_to place.title, place_path(place) %></u></h3>
+                <p><%=place.description%></p>
+                <% else %>
+                <h3><u><%= place.title %></u></h3>
+                <p><%=place.description%></p>
 
+               <% end %>
+            </div>
+               
         </div>
         <!-- /.row -->
 
@@ -61,21 +72,22 @@ $('#lightbox1').featherlight($('#lightbox1'), {});
             
             <%place.photos.each do |pic|  %>
             <% n = n+1%>
-            <div class="col-sm-3 col-xs-6" >
-           <a  href="#" data-featherlight="#lightbox<%=n%>">
-             <div id="lightbox<%=n%>">
-               
-                  <%= image_tag pic.image, class: "img-responsive well" %>
-            </div>
-            </a>
+            <div class="col-sm-3 col-xs-6 " >
+                <a href="#" data-featherlight="#lightbox<%=n%>">
+                  <div id="lightbox<%=n%>">
+                   <%= image_tag pic.image, class: "img-responsive portfolio-item well threed" %>
+                 </div>
+                </a>
             </div>
             <% end %> 
 
-            
-          </div>  
-           
+          </div> 
+
             <br/>
             <hr class= 'bold'/>
+         
+           
+            
         <!-- /.row -->
 
        
@@ -89,8 +101,14 @@ $('#lightbox1').featherlight($('#lightbox1'), {});
             </div>
 
             <div class="col-md-4">
+
+              <% if current_user && current_user == place.user %>
                 <h3><%= link_to place.title, place_path(place) %></h3>
                 <p><%=place.description%></p>
+                <% else %>
+                <h3><%= place.title %></h3>
+                <p><%=place.description%></p>
+                <% end %>
                 <h3>Project Details</h3>
                 <ul>
                     <li>Lorem Ipsum</li>
@@ -201,33 +219,13 @@ $('#lightbox1').featherlight($('#lightbox1'), {});
         <div class="row text-center">
             <div class="col-lg-12">
                 <ul class="pagination">
-                    <li>
-                        <a href="#">&laquo;</a>
-                    </li>
-                    <li class="active">
-                        <a href="#">1</a>
-                    </li>
-                    <li>
-                        <a href="#">2</a>
-                    </li>
-                    <li>
-                        <a href="#">3</a>
-                    </li>
-                    <li>
-                        <a href="#">4</a>
-                    </li>
-                    <li>
-                        <a href="#">5</a>
-                    </li>
-                    <li>
-                        <a href="#">&raquo;</a>
-                    </li>
+                    <%= will_paginate @places %>
                 </ul>
             </div>
         </div>
         <!-- /.row -->
 
         <hr>
-        </div>
+    </div>
 
     

@@ -78,4 +78,6 @@ gem 'mail_form'
 
 gem 'featherlight'
 
+gem 'will_paginate', '~> 3.1', '>= 3.1.5'
+
 
