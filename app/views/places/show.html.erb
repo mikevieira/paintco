@@ -5,25 +5,29 @@
 $('#lightbox1').featherlight($('#lightbox1'), {});
   
 
+
+
 </script>
 
 
 
-<div class="container">
 
-<h1>Edit: <small> <%= @place.title %></small></h1>
+<div class="booyah-box col-lg-10 col-lg-offset-1">
+<h1>Edit: <%= @place.title %> <small> (Current Title, Descriptions and Photos Displayed)</small></h1>
 
 <br/><br/>
-<p class="text-justify"><%= @place.description %></p>
+<p class="text-justify" id="showdpad"><%= @place.description %></p>
 <div class="text-right">
   <%= link_to 'Edit', edit_place_path(@place), class: 'btn btn-primary' %>
-  <%= link_to 'Delete', place_path(@place), method: :delete, data: {confirm: "Are you sure you want to delete this?"}, class: 'btn btn-danger'%>
-</div>  
-
+  <%= link_to 'Delete', place_path(@place), method: :delete, data: {confirm: "Are you sure you want to delete this project?"}, class: 'btn btn-danger'%>
+</div> 
+</div> 
 <br/>
+ 
+<div class="container">
 
-
-  <div class="row"> 
+  
+ <div class="row"> 
     <% n = 0%>
     <% @place.photos.each do |pic| %>
     <% n = n+1%>
@@ -49,7 +53,7 @@ $('#lightbox1').featherlight($('#lightbox1'), {});
   </div>
   </div>
   <div class="text-right">
-  <%= f.submit "Upload", class: 'btn btn-primary'  %>
+  <%= f.submit "Upload", class: 'btn btn-primary' %>
   </div>
 <% end %>
 </div>

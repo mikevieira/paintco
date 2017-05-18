@@ -11,8 +11,9 @@ before_action :authenticate_user!
 
 private
 
-def photo_params    
- params.require(:photo).permit(:image, :remove_image)   
+def photo_params 
+ params.fetch(:photo, {}).permit(:image)    
+ # params.require(:photo).permit(:image)   
 end
 
 end

@@ -35,30 +35,30 @@ $('#lightbox1').featherlight($('#lightbox1'), {});
 
 
 
-
-
         <!-- Portfolio Item Row -->
+        
          <% if @places.present?  %>
          <% n = 0%>
         <% @places.each do |place| %>
        <% if place.outside == true %>
        <% if place.photos.present? %>
-        <div class="row">
+     
+     <div class="row">
      
        <div class="col-md-8">
        <%= image_tag place.photos.last.image, class: 'img-responsive well'%></div> 
 
             <div class="col-md-4">
-               <% if current_user && current_user == place.user %>
-                <h3><u><%= link_to place.title, place_path(place) %></u></h3>
+             <% if current_user && current_user == place.user %>
+                <h3><%= link_to place.title, place_path(place) %></h3>
                 <p><%=place.description%></p>
                 <% else %>
-                <h3><u><%= place.title %></u></h3>
+                <h3><%= place.title %></h3>
                 <p><%=place.description%></p>
 
                <% end %>
             </div>
-               
+
         </div>
         <!-- /.row -->
 
@@ -72,37 +72,37 @@ $('#lightbox1').featherlight($('#lightbox1'), {});
             
             <%place.photos.each do |pic|  %>
             <% n = n+1%>
-            <div class="col-sm-3 col-xs-6">
-                <a href="#" data-featherlight="#lightbox<%=n%>">
-                  <div id="lightbox<%=n%>">
-                   <%= image_tag pic.image, class: "img-responsive portfolio-item well threed" %>
-                 </div>
-                </a>
+            <div class="col-sm-3 col-xs-6" >
+               <a href="#" data-featherlight="#lightbox<%=n%>">
+                 <div id="lightbox<%=n%>">
+                  <%= image_tag pic.image, class: "img-responsive well" %>
+                </div>
+              </a>
             </div>
             <% end %> 
 
-        </div> 
-
+            
+          </div>  
+           
             <br/>
             <hr class= 'bold'/>
-         
-           
             
         <!-- /.row -->
 
-       
+    
+
        
 
         <% else %>
+    
       <div class="row">
 
             <div class="col-md-8">
-                <img class="img-responsive" src="http://placehold.it/750x500" alt="">
+                <img class="img-responsive" src="https://placehold.it/750x500" alt="">
             </div>
 
             <div class="col-md-4">
-
-              <% if current_user && current_user == place.user %>
+                 <% if current_user && current_user == place.user %>
                 <h3><%= link_to place.title, place_path(place) %></h3>
                 <p><%=place.description%></p>
                 <% else %>
@@ -130,25 +130,25 @@ $('#lightbox1').featherlight($('#lightbox1'), {});
 
             <div class="col-sm-3 col-xs-6">
                 <a href="#">
-                    <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
+                    <img class="img-responsive portfolio-item" src="https://placehold.it/500x300" alt="">
                 </a>
             </div>
 
             <div class="col-sm-3 col-xs-6">
                 <a href="#">
-                    <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
+                    <img class="img-responsive portfolio-item" src="https://placehold.it/500x300" alt="">
                 </a>
             </div>
 
             <div class="col-sm-3 col-xs-6">
                 <a href="#">
-                    <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
+                    <img class="img-responsive portfolio-item" src="https://placehold.it/500x300" alt="">
                 </a>
             </div>
 
             <div class="col-sm-3 col-xs-6">
                 <a href="#">
-                    <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
+                    <img class="img-responsive portfolio-item" src="https://placehold.it/500x300" alt="">
                 </a>
             </div>
 
@@ -157,11 +157,14 @@ $('#lightbox1').featherlight($('#lightbox1'), {});
         <% end %>
         <% end %>
         <% end %>
+        
+
         <% else %>
+
          <div class="row">
 
             <div class="col-md-8">
-                <img class="img-responsive" src="http://placehold.it/750x500" alt="">
+                <img class="img-responsive" src="https://placehold.it/750x500" alt="">
             </div>
 
             <div class="col-md-4">
@@ -188,30 +191,49 @@ $('#lightbox1').featherlight($('#lightbox1'), {});
 
             <div class="col-sm-3 col-xs-6">
                 <a href="#">
-                    <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
+                    <img class="img-responsive portfolio-item" src="https://placehold.it/500x300" alt="">
                 </a>
             </div>
 
             <div class="col-sm-3 col-xs-6">
                 <a href="#">
-                    <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
+                    <img class="img-responsive portfolio-item" src="https://placehold.it/500x300" alt="">
                 </a>
             </div>
 
             <div class="col-sm-3 col-xs-6">
                 <a href="#">
-                    <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
+                    <img class="img-responsive portfolio-item" src="https://placehold.it/500x300" alt="">
                 </a>
             </div>
 
             <div class="col-sm-3 col-xs-6">
                 <a href="#">
-                    <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
+                    <img class="img-responsive portfolio-item" src="https://placehold.it/500x300" alt="">
                 </a>
             </div>
 
         </div>
         <% end %>
+        
+
+        <hr>
+
+        <!-- Pagination -->
+        <div class="row text-center">
+            <div class="col-lg-12">
+                <ul class="pagination">
+                    <%= will_paginate @places %>
+                </ul>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+    </div>
+
+       
+
 
 
 
