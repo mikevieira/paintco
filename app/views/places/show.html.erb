@@ -15,7 +15,9 @@ $('#lightbox1').featherlight($('#lightbox1'), {});
 <div class="booyah-box col-lg-10 col-lg-offset-1">
 <h1>Edit: <%= @place.title %> <small> (Current Title, Descriptions and Photos Displayed)</small></h1>
 
-<br/><br/>
+<br/>
+<h4>Date: <%=@place.date%></h4>
+<br/>
 <p class="text-justify" id="showdpad"><%= @place.description %></p>
 <div class="text-right">
   <%= link_to 'Edit', edit_place_path(@place), class: 'btn btn-primary' %>
