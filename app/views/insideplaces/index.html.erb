@@ -45,10 +45,10 @@ $('#lightbox1').featherlight($('#lightbox1'), {});
          </div>
         </a>
 
-            <div class="col-md-4">
+            <div class="col-md-6">
              <% if current_user && current_user == place.user %>
                 <h3><%= link_to place.title, place_path(place) %></h3>
-                <p><%=place.description%></p>
+                <p class="text-justify"><%=place.description%></p>
                 <% else %>
                 <h3><%= place.title %></h3>
                 <p><%=place.description%></p>
