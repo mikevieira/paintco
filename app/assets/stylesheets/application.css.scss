@@ -49,6 +49,7 @@ h6 {
 /* navbar styles */
 body {
     padding-top: 70px; /* Required padding for .navbar-fixed-top. Change if height of navigation changes. */
+    font-size: 17px;
 }
 
 .topnav {
@@ -62,14 +63,20 @@ body {
   background-color: white;
   }
 
-.navbar-fixed-top .navbar-brand {
+.navbar-fixed-top {
     padding: 0 15px;
 }
 
 .navbar-brand {
-  padding: 0px;
+    position: relative;
+    height: 100%;
+    background-size: contain;
+    margin-bottom: -75px;
+    margin-top: -75px;
+    }
 
-}
+
+
 .navbar-brand>img {
   height: 100%;
   padding: 0px;
@@ -298,5 +305,6 @@ p.copyright {
   padding-left: 15px;
 }
  
+
 
 

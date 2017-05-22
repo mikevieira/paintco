@@ -38,8 +38,12 @@ $('#lightbox1').featherlight($('#lightbox1'), {});
      
      <div class="row">
      
-       <div class="col-md-8">
-       <%= image_tag place.photos.last.image, class: 'img-responsive well'%></div> 
+       <div class="col-md-6">
+        <a href="#" data-featherlight="#lightbox<%=n%>">
+         <div id="lightbox<%=n%>">
+            <%= image_tag place.photos.last.image, class: 'img-responsive well well-sm'%></div> 
+         </div>
+        </a>
 
             <div class="col-md-4">
              <% if current_user && current_user == place.user %>
@@ -58,17 +62,12 @@ $('#lightbox1').featherlight($('#lightbox1'), {});
         <!-- Related Photos Row -->
         <div class="row">
 
-            <div class="col-lg-12">
-                <h3 class="page-header">More Photos <small>Click to enlarge</small></h3>
-            </div>
-
-            
             <%place.photos.each do |pic|  %>
             <% n = n+1%>
             <div class="col-sm-3 col-xs-6" >
                <a href="#" data-featherlight="#lightbox<%=n%>">
                  <div id="lightbox<%=n%>">
-                  <%= image_tag pic.image, class: "img-responsive well" %>
+                  <%= image_tag pic.image, class: "img-responsive well well-sm" %>
                 </div>
               </a>
             </div>
